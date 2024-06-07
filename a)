@@ -1,0 +1,22 @@
+public class LeapMonth {
+    public static void main(String[] args) {
+        int year = 2024; //  year
+        int month = 2;   //  month (February)
+
+        // Check if year is a leap year
+        boolean isLeapYear = (year % 4 == 0);
+        isLeapYear = isLeapYear && (year % 100 != 0);
+        isLeapYear = isLeapYear || (year % 400 == 0);
+
+        // Check if  month is a leap month 
+        boolean isLeapMonth = isLeapYear && (month == 2);
+
+        // Output
+        if (isLeapMonth) {
+            System.out.println(month + "/" + year + " is a leap month.");
+        } else {
+            System.out.println(month + "/" + year + " is not a leap month.");
+        }
+    }
+}
+
