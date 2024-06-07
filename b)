@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class LeapMonthScanner {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // enter the year
+        System.out.print("Enter the year: ");
+        int year = scanner.nextInt();
+
+        // enter the month
+        System.out.print("Enter the month (1-12): ");
+        int month = scanner.nextInt();
+
+        // Check if year is a leap year
+        boolean isLeapYear = (year % 4 == 0);
+        isLeapYear = isLeapYear && (year % 100 != 0);
+        isLeapYear = isLeapYear || (year % 400 == 0);
+
+        // Check if month is February and if it's a leap year
+        boolean isLeapMonth = isLeapYear && (month == 2);
+
+        // Output 
+        if (isLeapMonth) {
+            System.out.println("February " + year + " is a leap month.");
+        } else if (month == 2) {
+            System.out.println("February " + year + " is not a leap month.");
+        } else {
+            System.out.println("Month " + month + " in year " + year + " is not a leap month.");
+        }
+
+        // Close scanner
+        scanner.close();
+    }
+}
+
